@@ -77,7 +77,7 @@ class Offline_reportController extends Controller
         return redirect('/login');
     }
 
-    
+
     public function login(Request $request)
     {
       $data = $request->all();
@@ -432,14 +432,15 @@ class Offline_reportController extends Controller
     
     public function fetch_all_folder_files()
     {
+        //fetch all items in this folder:::////
         $entries = scandir(public_path());
 
         $root = public_path();
-
+  
         foreach (File::allFiles($root) as $file) {
            $data[] =   $file->getFilename();
         }
            echo "<pre>"; print_r($data);die;
-
+                          
     }
 }
